@@ -36,7 +36,7 @@ const PostDetailPage = ({ posts, setPosts, loggedInUser }) => {
 
   useEffect(() => {
     // 댓글 저장: comments가 변경될 때만 로컬 스토리지에 저장
-    if (post) {
+    if (post && comments.length > 0) {
       console.log("Saving Comments for Post ID", post.id, ":", comments);
       localStorage.setItem(`comments-${post.id}`, JSON.stringify(comments));
     }
